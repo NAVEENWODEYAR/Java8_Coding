@@ -11,3 +11,4 @@ target/classes/META-INF/maven/
 *.properties
 *.properties
 target/classes/META-INF/maven/com.java8/com.coding/pom.properties
+*.properties
