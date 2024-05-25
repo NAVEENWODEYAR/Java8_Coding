@@ -1,2 +1,7 @@
 # class files,
 *.class
+*.properties
+*.xml
+
+
+target/classes/META-INF/maven/
