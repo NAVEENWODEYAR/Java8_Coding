@@ -1,7 +1,13 @@
 # class files,
 *.class
+*.classpath
+*.project
 *.properties
 *.xml
-
+*.settings
 
 target/classes/META-INF/maven/
+*.prefs
+*.properties
+*.properties
+target/classes/META-INF/maven/com.java8/com.coding/pom.properties
