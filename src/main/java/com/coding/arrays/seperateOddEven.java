@@ -30,14 +30,12 @@ public class seperateOddEven {
     }
     
     static void oddEvenSeperator(List<Integer> intList) {
-    	Stream<Object> collect = intList.parallelStream().collect(Collectors.partitioningBy(n->n%2==0))
-    		.entrySet().stream()
-    		.map(k->String.format("%n%s",k.getKey()?"Even":"Odd",k.getValue().stream().map(String::valueOf).collect(Collectors.joining("\n"))));
-    	System.out.println(collect);
+    	intList.parallelStream().distinct().sorted().collect(Collectors.partitioningBy(n->n%2==0))
+    			.forEach((isEven,numbers)->System.out.printf("%n%sNumbers%n%s",isEven?"EvenNo":"Odd",numbers.stream().map(String::valueOf).collect(Collectors.joining(System.lineSeparator()))));
+    
     }
     public static void main(String[] args) {
-        List<Integer> intList = Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87);
-//        oddEven(intList);
+        List<Integer> intList = Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87,24,42,18,67);
         oddEvenSeperator(intList);
     }
 
