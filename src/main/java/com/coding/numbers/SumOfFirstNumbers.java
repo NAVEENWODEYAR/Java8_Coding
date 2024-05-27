@@ -4,7 +4,7 @@ package com.coding.numbers;
 import java.util.stream.IntStream;
 
 /**
- * @author Naveen K Wodeyar LENOVO
+ * @author Naveen K Wodeyar 
  * @date 27-May-202410:06:49 pm
  * @classDef com.coding
  */
