@@ -3,6 +3,8 @@ package com.coding.utils;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.Year;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 
@@ -15,9 +17,12 @@ import java.time.temporal.ChronoUnit;
 public class DateExtractor {
 
 	static void dateExtractor(LocalDate dob) {
-		LocalDateTime now = LocalDateTime.now();
+		LocalDate now = LocalDate.now();
+		Period age = Period.between(dob, now);
+        int yearsDifference = Year.now().getValue() - dob.getYear();
+
 		long between = ChronoUnit.YEARS.between(dob, now);
-		System.out.println(between);
+		System.out.println(between+" "+age.getYears()+" "+yearsDifference);
 	}
 	public static void main(String[] args) {
 		dateExtractor(LocalDate.of(1996, 5, 6));
