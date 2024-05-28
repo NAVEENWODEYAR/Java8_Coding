@@ -12,7 +12,7 @@ import java.util.stream.IntStream;
 public class SumOfFirstNumbers {
 	
 	static Integer sumOfNumbers() {
-		return IntStream.range(1, 10).sum();
+		return IntStream.rangeClosed(1, 10).sum();
 	}
 	
 	public static void main(String[] args) {
