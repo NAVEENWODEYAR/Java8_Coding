@@ -13,8 +13,8 @@ import java.util.stream.Collectors;
 public class FrequencyOfElements {
 
 	static void freqInArrList() {
-        List<String> strList = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Stapler", "Note Book", "   ", "Pencil");
-        strList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().forEach(System.out::println);
+        List<String> strList = Arrays.asList("Pen", "Eraser", "Note Book", "*^%^%^&*(&)*", "","  ","","  ","Pen", "Pencil", "Stapler", "Note Book", "   ", "Pencil");
+        strList.stream().filter(st->st !=" ").collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().forEach(System.out::println);
 	}
 	public static void main(String[] args) {
 		freqInArrList();
