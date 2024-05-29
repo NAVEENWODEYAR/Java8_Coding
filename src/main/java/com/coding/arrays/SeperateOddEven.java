@@ -4,8 +4,7 @@ package com.coding.arrays;
 
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.stream.*;
 /**
  * @author Naveen K Wodeyar
  * @apiNote Given a list of integers, separate odd and even numbers
@@ -26,14 +25,13 @@ public class SeperateOddEven {
         	System.out.println(i);
             }
         }
-    
     }
     
     static void oddEvenSeperator(List<Integer> intList) {
     	intList.parallelStream().distinct().sorted().collect(Collectors.partitioningBy(n->n%2==0))
     			.forEach((isEven,numbers)->System.out.printf("%n%sNumbers%n%s",isEven?"EvenNo":"Odd",numbers.stream().map(String::valueOf).collect(Collectors.joining(System.lineSeparator()))));
     
-    	intList.stream().distinct().sorted().collect(Collectors.partitioningBy(n-> n%2 ==0)).entrySet().stream().map(n->String.format("%n%sNumbers%n%s",n.getKey()?"Even": "Odd",n.getValue().stream().map(String::valueOf).collect(Collectors.joining()))).forEach(System.out::println);
+    	intList.stream().distinct().sorted().collect(Collectors.groupingBy(n-> n%2 ==0)).entrySet().stream().map(n->String.format("%n%sNumbers%n%s",n.getKey()?"Even": "Odd",n.getValue().stream().map(String::valueOf).collect(Collectors.joining()))).forEach(System.out::println);
     
     }
     public static void main(String[] args) {
