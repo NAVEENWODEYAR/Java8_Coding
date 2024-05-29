@@ -1,9 +1,7 @@
 
 package com.coding.series;
 
-import java.sql.Date;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
 
@@ -21,7 +19,6 @@ public class FibonacciSeries {
 	static void dateCalci(LocalDate date) {
 		LocalDate now = LocalDate.now();
 		System.out.println(ChronoUnit.YEARS.between(date, now));
-
 	}
 	
 	public static void main(String[] args) {
