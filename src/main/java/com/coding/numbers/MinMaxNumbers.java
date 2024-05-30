@@ -23,7 +23,6 @@ public class MinMaxNumbers {
 		String s1 = "Listen", s2 = "Silent";
 		boolean equals = Stream.of(s1.toUpperCase().split("")).sorted().collect(Collectors.joining()).equals(Stream.of(s2.toUpperCase().split("")).sorted().collect(Collectors.joining()));
 		System.out.println(equals?"True":"False");	
-		
 	}
 	
 	public static void main(String[] intArray) {
