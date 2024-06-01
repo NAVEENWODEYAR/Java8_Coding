@@ -8,6 +8,8 @@ package com.coding.arrays;
  */
 public class ExtractDuplicates {
 
+	static String inputString = "Java Concept Of The Day".replaceAll("\\s+", "").toLowerCase();
+
 	static void extractDuplicates() {
 		
 	}
