@@ -26,9 +26,7 @@ public class MapVsHashMap {
 	
 	// Get unique locations of all institutes,
 	static void falatMp() {
-    instList.stream().flatMap(institute -> institute.getLocations().stream()).collect(Collectors.toSet());
-
-		System.out.println("Instituet address :");
+		instList.stream().flatMap(in->in.getInstName()).distinct();
 	}
 	
 	
