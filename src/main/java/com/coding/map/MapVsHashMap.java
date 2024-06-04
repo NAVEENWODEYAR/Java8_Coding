@@ -2,7 +2,7 @@
 package com.coding.map;
 
 import java.util.*;
-import java.util.stream.*;
+import java.util.stream.Collectors;
 
 public class MapVsHashMap {
 	/**
@@ -26,12 +26,26 @@ public class MapVsHashMap {
 	
 	// Get unique locations of all institutes,
 	static void falatMp() {
-		instList.stream().flatMap(in->in.getInstName()).distinct();
+		 List<Integer> PrimeNumbers = Arrays.asList(5, 7, 11,13); 
+         
+        List<Integer> OddNumbers = Arrays.asList(1, 3, 5); 
+	          
+        List<Integer> EvenNumbers = Arrays.asList(2, 4, 6, 8); 
+	  
+        List<List<Integer>> listOfListofInts =  Arrays.asList(PrimeNumbers, OddNumbers, EvenNumbers); 
+        
+        System.out.println("Before flattening "+listOfListofInts);
+        
+        List<Integer> collect = listOfListofInts.stream().flatMap(list->list.stream()).collect(Collectors.toList());
+        System.out.println("After flattening "+collect);
+	  
 	}
 	
 	
 	public static void main(String[] args) {
 		mapDemo();
 	}
+	
+	static {falatMp();}
 
 }
