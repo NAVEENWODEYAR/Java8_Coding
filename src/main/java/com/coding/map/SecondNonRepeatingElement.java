@@ -1,7 +1,8 @@
 
 package com.coding.map;
 
-import java.util.HashMap;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author Naveen K Wodeyar LENOVO
@@ -9,30 +10,40 @@ import java.util.HashMap;
  * @classDef find the second non-repeating element in an array using
  */
 public class SecondNonRepeatingElement {
-
-	static int arr[] = {1,2,3,3,4,5,2,6,7,8,9};
-	
-	static int secondNonRepeatingElement(int[] arr) {
-		
-		HashMap<Integer, Integer> hm = new HashMap<>();
-		
-		for(int i:arr) {
-			hm.put(i,hm.getOrDefault(i,0)+1);
+		static Optional<Integer> secondNonRepeatingNo(int[] arr) {
+			Map<Integer, Long> collect = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(e->e,Collectors.counting()));
+			List<Integer> list = Arrays.stream(arr).boxed().filter(e->collect.get(e) ==1).distinct().toList();
+			return list.size() > 1? Optional.of(list.get(1)):Optional.empty();
 		}
-		 int nonRepetingEle = 0;
-		 
-		 for(int i: arr) {
-			 if(nonRepetingEle == 1) {
-				 nonRepetingEle++;
-				 if(nonRepetingEle == 2) {
-					 return i;
-				 }
-			 }
-		 }
-		return nonRepetingEle;
-	}
-	public static void main(String[] args) {
-		System.out.println(secondNonRepeatingElement(arr));
+	
+	    public static void main(String[] args) {
+	        int[] arr = {4, 5, 4, 5, 8, 3, 2, 1, 2, 3, 6}; // Example array
+	        Integer result = secondNonoRepeatedElement(arr);
+	        System.out.println(secondNonRepeatingNo(arr));
+	        if (result != null) {
+	            System.out.println("The second non-repeating element is: " + result);
+	        } else {
+	            System.out.println("There are not enough non-repeating elements in the array.");
+	        }
+	    }
+	    
+	    static Integer secondNonoRepeatedElement(int arr[]) {
+	    	Map<Integer, Integer> hm = new HashMap<>();
+	    	
+	    	for(int i: arr) {
+	    		hm.put(i,hm.getOrDefault(i, 0)+1);
+	    	}
+	    	 int nonRepeatingEle = 0;
+	    	 
+	    	 for(int i:arr) {
+	    		 if(hm.get(i) ==1) {
+	    			 nonRepeatingEle++;
+	    			 if(nonRepeatingEle == 2) {
+	    				 return i;
+	    			 }
+	    		 }
+	    	 }
+	    	return null;
+	    }
 	}
 
-}
