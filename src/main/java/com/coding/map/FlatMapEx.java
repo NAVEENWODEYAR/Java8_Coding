@@ -5,7 +5,7 @@ import java.util.*;
 import java.util.stream.*;
 
 /**
- * @author Naveen K Wodeyar LENOVO
+ * @author Naveen K Wodeyar 
  * @date 04-Jun-202411:52:21 pm
  * @classDef, Collecting Nested Arrays into a Single List
  */
@@ -17,7 +17,6 @@ public class FlatMapEx {
 		nestedList();
 		return Arrays.stream(dataArray).flatMap(arr->Arrays.stream(arr)).collect(Collectors.toList());
 	}
-	
 	
 	static List nestedList() {
 		List<Integer> list1 = Arrays.asList(1,2,3);
@@ -34,11 +33,14 @@ public class FlatMapEx {
 				  Arrays.asList(1, 2, 3),
 				  Arrays.asList(4, 5),
 				  Arrays.asList(6, 7, 8));
+		Stream<Integer> map = listOfLists.parallelStream().map(list->list.stream().mapToInt(Integer::intValue).sum());
+		map.forEach(System.out::println);
 		return listOfLists.stream().flatMap(list->list.stream()).mapToInt(Integer::intValue).sum();
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(flatMp());
+//		System.out.println(flatMp());
+		sumOfList();
 	}
 
 }
