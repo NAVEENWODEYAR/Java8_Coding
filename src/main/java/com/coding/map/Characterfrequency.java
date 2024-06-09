@@ -23,14 +23,26 @@ public class Characterfrequency {
 	}
 	
 	static void charFreq(String st) {
-		st.chars().filter(c->c!=' ').mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().forEach(System.out::println);
+		st.chars().filter(c->c!=' ').mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().forEach(System.out::print);
+		st.chars().mapToObj(c->(char)c).collect(Collectors.toMap(c->c,c->1, Integer::sum,LinkedHashMap::new)).entrySet().forEach(System.out::print);
+			  LinkedHashMap<Character, Long> collect = st.chars()
+	                 .mapToObj(c -> (char) c)
+	                 .collect(Collectors.groupingBy(c -> c, Collectors.counting()))
+	                 .entrySet()
+	                 .stream()
+	                 .sorted(Map.Entry.<Character, Long>comparingByValue(Comparator.reverseOrder()))
+	                 .collect(Collectors.toMap(
+	                     Map.Entry::getKey, 
+	                     Map.Entry::getValue, 
+	                     (e1, e2) -> e1, 
+	                     LinkedHashMap::new));
 	}
 	
 	static void wordFreq(List<String> list) {
 		list.stream()
 			.collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
-			.entrySet().stream().sorted()
-			.forEach(System.out::println);
+			.entrySet()
+			.forEach(System.out::print);
 	}
 	
 	public static void main(String[] args) {
