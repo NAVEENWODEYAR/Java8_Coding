@@ -10,12 +10,12 @@ import java.util.stream.Collectors;
  * @classDef find the second non-repeating element in an array using
  */
 public class SecondNonRepeatingElement {
+	
 		static Integer secondNonRepeatingNo(int[] arr) {
 			Map<Integer, Long> collect = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(e->e,Collectors.counting()));
 			List<Integer> list = Arrays.stream(arr).boxed().filter(e->collect.get(e) ==1).distinct().toList();
 			return list.size() > 1? list.get(1):null;
 		}
-		
 		
 		static Integer fourthNonRepeatingEle(int arr[]) {
 			Optional<Integer> collect = Arrays.stream(arr)
