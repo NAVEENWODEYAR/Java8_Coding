@@ -26,7 +26,7 @@ public class SecondNonRepeatingElement {
 		}
 	
 	    public static void main(String[] args) {
-	        int[] arr = {4, 5, 4, 5, 8, 3, 2, 1, 2, 3, 6}; // Example array
+	        int[] arr = {4, 5, 4, 5, 8, 3, 2, 1, 2, 3, 6};
 	        Integer result = secondNonoRepeatedElement(arr);
 	        System.out.println(secondNonRepeatingNo(arr));
 	        if (result != null) {
