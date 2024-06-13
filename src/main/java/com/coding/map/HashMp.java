@@ -1,7 +1,7 @@
 
 package com.coding.map;
 
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * @author Naveen K Wodeyar LENOVO
@@ -23,7 +23,21 @@ public class HashMp {
 		// 4. default initial capacity(16) & loadfactor(),
 		HashMap<Object, Object> hashMap3 = new HashMap<>(hashMap);
 		
-		System.out.println(hashMap);
+		hashMap.put(hashMap2, hashMap3);
+		hashMap1.putAll(hashMap);
+		hashMap2.put(1, 0.1f);
+		hashMap3.put(new HashMp().toString(), Arrays.asList("One","2"));
+		
+		System.out.println(hashMap+"\n"+hashMap1+"\n"+hashMap2+"\n"+hashMap3);
+		System.out.println(hashMap.containsKey("Two")+"--"+hashMap2.containsValue(hashMap));
+		System.out.println("**************");
+		hashMap.clear();
+		hashMap1.clear();
+		hashMap2.clear();
+		hashMap3.clear();
+		System.out.println(hashMap+"\n"+hashMap1+"\n"+hashMap2+"\n"+hashMap3);
+		System.out.println(hashMap.containsKey("Two")+"--"+hashMap2.containsValue(hashMap));
+
 	}
 	public static void main(String[] args) {
 		hashMpCreationWays();

@@ -47,7 +47,7 @@ public class Characterfrequency {
 	
 	public static void main(String[] args) {
 		String st = "Programming";
-		List<String> list = Arrays.asList("One","Two","Three","Four","Five","Two","Six","Seven","Four");
+		List<String> list = Arrays.asList("One","Two","Three","Four","Five","Two","Six","Seven","Four","Ten");
 		System.out.println("\n********\n");
 		charFrequency(st);
 		System.out.println("\n********\n");

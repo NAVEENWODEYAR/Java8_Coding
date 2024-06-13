@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author Naveen K Wodeyar 
- * @date 10-Jun-202410:00:16 pm
+ * @date 10-Jun-202410:00:16 
  * @classDef find first non repeating string,
  */
 public class FirsrtNonRepeatingString {
@@ -23,9 +23,8 @@ public class FirsrtNonRepeatingString {
 		.findFirst()
 		.orElse(null);
 	}
+	
 	public static void main(String[] args) {
-		System.out.println(nonRepeatingString("nunll"));
-
+		System.out.println(nonRepeatingString("null"));
 	}
-
 }
