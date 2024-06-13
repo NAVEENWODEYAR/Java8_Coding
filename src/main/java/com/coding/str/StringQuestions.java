@@ -2,6 +2,7 @@
 package com.coding.str;
 
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * @author Naveen K Wodeyar
@@ -9,17 +10,15 @@ import java.util.stream.IntStream;
  * @classDef string coding questions,
  */
 public class StringQuestions {
-
 	static String st = "String";
 	
 	static void strReverse() {	
 		String rev = "";
-		for(int i=st.length()-1; i>=0;i--) {
-			rev =rev+rev.charAt(i);
+		int length = st.length();
+		for(int i=st.length()-1; i>=0;i--) {			
+			rev =rev+st.charAt(i);
 		}
 		System.out.println(rev);
-		IntStream sorted = st.chars().sorted();
-		System.out.println(sorted);
 	}
 	
 	public static void main(String[] args) {
