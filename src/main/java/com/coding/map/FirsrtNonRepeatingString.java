@@ -1,4 +1,3 @@
-
 package com.coding.map;
 
 import java.util.*;
@@ -22,6 +21,21 @@ public class FirsrtNonRepeatingString {
 		.map(Map.Entry::getKey)
 		.findFirst()
 		.orElse(null);
+	}
+	
+	static Character nonRepeatingStr(String st) {
+		HashMap<Character, Integer> hashMap = new HashMap<>();
+		
+		for(char c:st.toCharArray()) {
+			hashMap.put(c, hashMap.getOrDefault(c, 0)+1);
+		}
+		
+		for(Map.Entry<Character,Integer> mp:hashMap.entrySet()) {
+			if(mp.getValue()==1) {
+				return mp.getKey();
+			}
+		}
+		return null;
 	}
 	
 	public static void main(String[] args) {
