@@ -24,7 +24,7 @@ public class PalindromeInJava8 {
 		String rev = "";
 		for(int i=str.length()-1; i>=0; i--) {
 			rev +=str.charAt(i);
-		}
+		}	
 		String st = rev.toLowerCase();
 		if(st.equalsIgnoreCase(str))
 			return true;
