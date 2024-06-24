@@ -1,9 +1,6 @@
-
 package com.coding.string;
 
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
+import java.util.stream.*;
 /**
  * @date 26/05/2024 16:26PM
  * @apiNote Java 8 program to check if two strings are anagrams or not
