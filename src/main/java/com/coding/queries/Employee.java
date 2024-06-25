@@ -6,156 +6,76 @@ package com.coding.queries;
  */
 public class Employee {
 
-	private int empId;
-	
-	private String empName;
-	
-	private int empAge;
-	
-	private String empGender;
-	
-	private int empJoiningYear;
-	
-	private double empSalary;
-
-	
-	public Employee() {}
-
-
-	/**
-	 * @param empId
-	 * @param empName
-	 * @param empAge
-	 * @param empGender
-	 * @param empJoiningYear
-	 * @param empSalary
-	 */
-	public Employee(int empId, String empName, int empAge, String empGender, int empJoiningYear, double empSalary) {
-		super();
-		this.empId = empId;
-		this.empName = empName;
-		this.empAge = empAge;
-		this.empGender = empGender;
-		this.empJoiningYear = empJoiningYear;
-		this.empSalary = empSalary;
-	}
-
-
-	/**
-	 * @param i
-	 * @param string
-	 * @param j
-	 * @param string2
-	 * @param string3
-	 * @param k
-	 * @param d
-	 */
-	public Employee(int i, String string, int j, String string2, String string3, int k, double d) {
-		this.empId = empId;
-		this.empName = empName;
-		this.empAge = empAge;
-		this.empGender = empGender;
-		this.empJoiningYear = empJoiningYear;
-		this.empSalary = empSalary;
-	}
-
-
-	/**
-	 * @return the empId
-	 */
-	public int getEmpId() {
-		return empId;
-	}
-
-
-	/**
-	 * @param empId the empId to set
-	 */
-	public void setEmpId(int empId) {
-		this.empId = empId;
-	}
-
-
-	/**
-	 * @return the empName
-	 */
-	public String getEmpName() {
-		return empName;
-	}
-
-
-	/**
-	 * @param empName the empName to set
-	 */
-	public void setEmpName(String empName) {
-		this.empName = empName;
-	}
-
-
-	/**
-	 * @return the empAge
-	 */
-	public int getEmpAge() {
-		return empAge;
-	}
-
-
-	/**
-	 * @param empAge the empAge to set
-	 */
-	public void setEmpAge(int empAge) {
-		this.empAge = empAge;
-	}
-
-
-	/**
-	 * @return the empGender
-	 */
-	public String getEmpGender() {
-		return empGender;
-	}
-
-
-	/**
-	 * @param empGender the empGender to set
-	 */
-	public void setEmpGender(String empGender) {
-		this.empGender = empGender;
-	}
-
-
-	/**
-	 * @return the empJoiningYear
-	 */
-	public int getEmpJoiningYear() {
-		return empJoiningYear;
-	}
-
-
-	/**
-	 * @param empJoiningYear the empJoiningYear to set
-	 */
-	public void setEmpJoiningYear(int empJoiningYear) {
-		this.empJoiningYear = empJoiningYear;
-	}
-
-
-	/**
-	 * @return the empSalary
-	 */
-	public double getEmpSalary() {
-		return empSalary;
-	}
-
-
-	/**
-	 * @param empSalary the empSalary to set
-	 */
-	public void setEmpSalary(double empSalary) {
-		this.empSalary = empSalary;
-	}
-	
-	
-
+	private int id;
+    
+    private String name;
+     
+    private int age;
+     
+    private String gender;
+     
+    private String department;
+     
+    private int yearOfJoining;
+     
+    private double salary;
+     
+    public Employee(int id, String name, int age, String gender, String department, int yearOfJoining, double salary) 
+    {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.department = department;
+        this.yearOfJoining = yearOfJoining;
+        this.salary = salary;
+    }
+     
+    public int getId() 
+    {
+        return id;
+    }
+     
+    public String getName() 
+    {
+        return name;
+    }
+     
+    public int getAge() 
+    {
+        return age;
+    }
+     
+    public String getGender() 
+    {
+        return gender;
+    }
+     
+    public String getDepartment() 
+    {
+        return department;
+    }
+     
+    public int getYearOfJoining() 
+    {
+        return yearOfJoining;
+    }
+     
+    public double getSalary() 
+    {
+        return salary;
+    }
+     
+    @Override
+    public String toString() 
+    {
+        return "Id : "+id
+                +", Name : "+name
+                +", age : "+age
+                +", Gender : "+gender
+                +", Department : "+department
+                +", Year Of Joining : "+yearOfJoining
+                +", Salary : "+salary;
+    }
 	
 }

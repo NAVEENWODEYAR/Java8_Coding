@@ -1,6 +1,8 @@
 package com.coding.queries;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 /**
  * @author Naveen K Wodeyar 
  * @date 25-Jun-20248:11:21 pm
@@ -27,10 +29,26 @@ public class EmployeeImpl {
 		employeeList.add(new Employee(244, "Nicolus Den", 24, "Male", "Sales And Marketing", 2017, 10700.5));
 		employeeList.add(new Employee(255, "Ali Baig", 23, "Male", "Infrastructure", 2018, 12700.0));
 		employeeList.add(new Employee(266, "Sanvi Pandey", 26, "Female", "Product Development", 2015, 28900.0));
-		employeeList.add(new Employee(277, "Anuj Chettiar", 31, "Male", "Product Development", 2012, 35700.0));
+		employeeList.add(new Employee(277, "Bhaskar", 31, "Male", "Product Development", 2012, 315700.0));
 		
-		System.out.println("\n"+employeeList+"\n");
+		System.out.println("\nAll Employees:");
+        employeeList.forEach(System.out::println);
 
+        Map<String, Long> empCount = employeeList.stream().map(Employee::getGender).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        System.out.println("\nGender count "+empCount);
+
+        
+        List<String> deptList = employeeList.stream().map(Employee::getDepartment).distinct().toList();
+        System.out.println("\nDepartment list "+deptList);
+        
+        
+        Map<String, Double> avgSal = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender,Collectors.averagingDouble(Employee::getSalary)));
+        avgSal.forEach((gender, avgSalary) -> System.out.println("\n"+gender + ": " + String.format("%.2f", avgSalary)));
+
+        
+        Double maxSal = employeeList.stream().max(Comparator.comparing(Employee::getSalary)).map(Employee::getSalary).orElseThrow();
+        System.out.println("\nHighest paid employee with salary:"+maxSal);
+	
 	}
 
 }
