@@ -25,10 +25,14 @@ public class StudentImpl {
 //		studentList.stream()
 //				  .collect(Collectors.groupingBy(Student::getStSubject,Collectors.maxBy(Comparator.comparing(Student::getStMarks)))).entrySet().forEach(System.out::println);
 //		
-		Student m = studentList.stream().max(Comparator.comparingDouble(Student::getStMarks)).orElseThrow();
-		System.out.println(m);
+		Map<String, Object> collect2 = studentList.stream().collect(Collectors.groupingBy(Student::getStSubject,Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparing(Student::getStMarks)), s->s.get().getStName()+"-"+s.get().getStMarks())));
+		System.out.println(collect2);
+		
+		Map<String, Student> collect3 = studentList.stream().collect(Collectors.groupingBy(Student::getStSubject,Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingDouble(Student::getStMarks)), s->s.get())));
+		System.out.println(collect3);
 		System.exit(0);
-		 
+		
+		
 		List<Student> collect = studentList.stream()
         .collect(Collectors.groupingBy(Student::getStSubject,
                 Collectors.collectingAndThen(

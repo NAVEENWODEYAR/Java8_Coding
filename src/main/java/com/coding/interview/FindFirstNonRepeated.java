@@ -33,8 +33,17 @@ public class FindFirstNonRepeated {
 	            .map(Map.Entry::getKey)
 	            .findFirst().orElse(null);
 	}
-
 	
+	static Character firstRepeatedString(String st) {
+		return st.toLowerCase().chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()))
+			.entrySet()
+			.stream()
+			.filter(e->e.getValue() > 1)
+			.map(Map.Entry::getKey)
+			.findFirst()
+			.orElseThrow();
+	}
+
 	public static void main(String[] args) {
 		System.out.println(firstNonRepeatedChar("null"));
 		System.out.println("*********");
