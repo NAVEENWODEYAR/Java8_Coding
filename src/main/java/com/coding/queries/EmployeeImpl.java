@@ -46,9 +46,22 @@ public class EmployeeImpl {
         avgSal.forEach((gender, avgSalary) -> System.out.println("\n"+gender + ": " + String.format("%.2f", avgSalary)));
 
         
+        double maxSalary = employeeList.stream().collect(Collectors.maxBy(Comparator.comparing(Employee::getSalary))).orElseThrow().getSalary();
         Double maxSal = employeeList.stream().max(Comparator.comparing(Employee::getSalary)).map(Employee::getSalary).orElseThrow();
-        System.out.println("\nHighest paid employee with salary:"+maxSal);
+        System.out.println("\nHighest paid employee with salary:"+maxSal+" "+maxSalary);
 	
+        
+        List<Employee> list = employeeList.stream().filter(e->e.getYearOfJoining() > 2015).toList();
+        System.out.println("\nEmployees joined after 2015 "+list);
+        
+        
+        Map<String, Long> deptCount = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.counting()));
+        System.out.println("\n Employee count in each dept: "+deptCount);
+        
+        Map<String, Double> avgDeptSal = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.averagingDouble(Employee::getSalary)));
+        System.out.println("\nAverage salary of dept "+avgDeptSal);
+        
+        
 	}
 
 }
