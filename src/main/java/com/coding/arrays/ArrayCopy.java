@@ -10,7 +10,8 @@ import java.util.stream.IntStream;
  */
 public class ArrayCopy {
 
-	static void initializeArray() throws ArrayIndexOutOfBoundsException {
+	static void initializeArray() {
+		try {
 		// Using Array Literals,
 		String names[] = new String[] { "One", "Two", "Three", "Four", "Five" };
 		names[5] = "Six"; // ArrayIndexOutOfBoundsException
@@ -62,6 +63,10 @@ public class ArrayCopy {
 
 
 		copyArray(intArr);
+		}
+		catch(Exception e) {
+			System.out.println(e.getCause());
+		}
 	}
 	
 	static void copyArray(int[] arr) {
