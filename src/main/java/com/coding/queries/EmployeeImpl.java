@@ -77,6 +77,30 @@ public class EmployeeImpl {
         
         Map<String, List<Employee>> empList = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
         System.out.println(empList);
+        
+        DoubleSummaryStatistics stasticis = employeeList.stream().collect(Collectors.summarizingDouble(Employee::getSalary));
+        System.out.println("\nSalary Statistics "+stasticis);
+        
+        Map<Boolean, List<Employee>> emp25 = employeeList.stream().collect(Collectors.partitioningBy(e->e.getAge()>25));
+        System.out.println(emp25);
+
+        for (java.util.Map.Entry<Boolean, List<Employee>> entry : emp25.entrySet()) {
+        	if(entry.getKey()) {
+        		System.out.println("Employees older than 25");
+        	}
+        	else
+        	{
+        		System.out.println("Employees younger than 25");
+        	}
+        	System.out.println("---------");
+        	for(Employee e:list) {
+        		System.out.println(e.getName());
+        	}
+        }
+     
+        
+        Employee oldestEmp = employeeList.stream().max(Comparator.comparing(Employee::getAge)).orElseThrow(null);
+        System.out.println("\n Oldest employee "+oldestEmp.getAge()+"-"+oldestEmp.getName()+"-"+oldestEmp.getDepartment());
 	}
 
 }
