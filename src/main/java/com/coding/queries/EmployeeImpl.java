@@ -62,6 +62,21 @@ public class EmployeeImpl {
         System.out.println("\nAverage salary of dept "+avgDeptSal);
         
         
+        Employee junior = employeeList.stream().filter(e->e.getDepartment().equalsIgnoreCase("Product Development") && e.getGender().equalsIgnoreCase("Male")).min(Comparator.comparing(Employee::getAge)).orElseThrow(null);
+        System.out.println("\nYoungest Male employee Product Development,\nName: "+junior.getName()+" \nAge:"+junior.getAge());
+     
+        Employee senior = employeeList.stream().min(Comparator.comparing(Employee::getYearOfJoining)).orElseThrow();
+        System.out.println("\nSeniormost employee in the organization:"+senior.getName()+"\nJoined year:"+senior.getYearOfJoining());
+	
+        Map<String, Long> genderCount = employeeList.stream().filter(e->e.getDepartment().equalsIgnoreCase("Sales and Marketing")).collect(Collectors.groupingBy(Employee::getGender,Collectors.counting()));
+        System.out.println("\nGender count in  sales and marketing team "+genderCount);
+			
+        
+        Map<String, Double> genderAvgSalary = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender,Collectors.averagingDouble(Employee::getSalary)));
+        System.out.println("\nAverage salary in gender:"+genderAvgSalary);
+        
+        Map<String, List<Employee>> empList = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        System.out.println(empList);
 	}
 
 }

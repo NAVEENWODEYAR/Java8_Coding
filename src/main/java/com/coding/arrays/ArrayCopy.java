@@ -15,6 +15,7 @@ public class ArrayCopy {
 		// Using Array Literals,
 		String names[] = new String[] { "One", "Two", "Three", "Four", "Five" };
 		names[5] = "Six"; // ArrayIndexOutOfBoundsException
+		Collections.sort(Arrays.asList(names));
 		System.out.println(Arrays.toString(names));
 
 		// Using the new Keyword,
