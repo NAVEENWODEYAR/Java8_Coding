@@ -1,7 +1,5 @@
 package com.coding.threads;
 
-import java.util.Iterator;
-
 /**
  * @author Naveen K Wodeyar 
  * @date 10-Jul-202410:02:53 pm
@@ -23,9 +21,8 @@ public class Thread1 implements Runnable {
 		for (int i = 0; i < 5; i++) {
 			System.out.println(Thread.currentThread().getName()+","+i);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(10000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
