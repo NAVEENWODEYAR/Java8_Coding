@@ -7,11 +7,12 @@ package com.coding.threads;
  */
 public class Thread1 implements Runnable {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Thread1 t = new Thread1();
 		Thread thread = new Thread(t);
 		Thread thread1 = new Thread(t);
 				thread1.start();
+				thread1.join();
 				thread.start();
 	}
 
