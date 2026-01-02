@@ -31,6 +31,6 @@ public class AnagramTest {
 	
 	public static void main(String[] args) {
 		System.out.println(anagramTest("Silent", "Listen")?"Anagrams":"Not Anagrams");
-		System.out.println(anagramTestInString("the classroom", "school mastern")?"Anagrams":"Not Anagrams");
+		System.out.println(anagramTestInString("the classroom", "school master")?"Anagrams":"Not Anagrams");
 	}
 }
