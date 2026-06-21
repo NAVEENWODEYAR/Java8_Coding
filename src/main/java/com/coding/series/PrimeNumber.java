@@ -31,7 +31,7 @@ public class PrimeNumber {
 	}
 	public static void main(String[] args) {
 		System.out.println(primeNo(3));
-		System.out.println(prmNo(3));
+		System.out.println("Prime numbers " +prmNo(3));
 	}
 
 }
