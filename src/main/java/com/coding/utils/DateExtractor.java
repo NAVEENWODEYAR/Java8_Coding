@@ -25,6 +25,7 @@ public class DateExtractor {
 		System.out.println(between+" "+age.getYears()+" "+yearsDifference);
 	}
 	public static void main(String[] args) {
+System.out.println("date Extractor demo program");
 		dateExtractor(LocalDate.of(1996, 5, 6));
 	}
 
