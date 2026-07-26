@@ -20,7 +20,7 @@ public class ArrayIndicesForSum {
 			}
 			hashMap.put(arr[i], i);
 		}
-		throw new IllegalArgumentException("Not indices found");
+		throw new IllegalArgumentException("No indices found");
 	}
 	
 	
