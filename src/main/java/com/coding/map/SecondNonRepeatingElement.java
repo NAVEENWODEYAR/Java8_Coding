@@ -28,6 +28,8 @@ public class SecondNonRepeatingElement {
 	    public static void main(String[] args) {
 	        int[] arr = {4, 5, 4, 5, 8, 3, 2, 1, 2, 3, 6};
 	        Integer result = secondNonoRepeatedElement(arr);
+
+System.out.println("Second non repeating element");
 	        System.out.println(secondNonRepeatingNo(arr));
 	        if (result != null) {
 	            System.out.println("The second non-repeating element is: " + result);
