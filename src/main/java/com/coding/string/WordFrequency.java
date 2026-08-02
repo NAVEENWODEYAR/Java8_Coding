@@ -16,6 +16,8 @@ public class WordFrequency {
 		stationeryList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().forEach(System.out::println);
 	}
 	public static void main(String[] args) {
+
+System.out.println("Word frequency");
 		wordFreq();
 	}
 
