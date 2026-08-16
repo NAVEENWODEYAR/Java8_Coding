@@ -42,6 +42,7 @@ public class Anagrams {
 	}
 	
 	public static void main(String[] args) {
+System.out.println("Anagram program");
 		System.out.println(anagramTest("heart", "earth")?"Anagrams":"Not Anagrams");
 		System.out.println(anagramJ8("heart", "earth")?"Anagrams":"Not Anagrams");
 		System.out.println(anagramLoop("Silent", "listen")?"Anagrams":"Not Anagrams");
