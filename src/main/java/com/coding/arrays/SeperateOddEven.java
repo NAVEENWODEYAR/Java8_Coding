@@ -35,6 +35,7 @@ public class SeperateOddEven {
     
     }
     public static void main(String[] args) {
+System.out.println("Even Odd number seperator");
         List<Integer> intList = Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87,24,42,18,67);
         oddEvenSeperator(intList);
     }
