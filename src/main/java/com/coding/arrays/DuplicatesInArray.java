@@ -17,6 +17,7 @@ public class DuplicatesInArray {
     	System.out.println(collect);
     }
 	public static void main(String[] args) {
+System.out.println("Duplicate elements in Array.");
 		extractDuplicates();
 	}
 
