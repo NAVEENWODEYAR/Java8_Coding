@@ -25,6 +25,7 @@ public class NonRepeatedString {
 	}
 	
 	public static void main(String[] args) {
+System.out.println("Non repeating string");
 		nonRepeatedString();
 	}
 
