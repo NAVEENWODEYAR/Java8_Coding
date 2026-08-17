@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  */
 public class WordFrequency {
     
-	static List<String> stationeryList = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Stapler", "Note Book", "Pencil");
+	static List<String> stationeryList = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Stapler", "Note Book", "Pencil","Frequency");
 
 	static void wordFreq() {
 		stationeryList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().forEach(System.out::println);
