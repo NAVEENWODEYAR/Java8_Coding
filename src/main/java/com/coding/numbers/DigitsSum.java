@@ -17,6 +17,7 @@ public class DigitsSum {
 		return Stream.of(String.valueOf(a).split("")).collect(Collectors.summingInt(Integer::parseInt));
 	}
 	public static void main(String[] args) {
+System.out.println("Sum of digits");
 		System.out.println("\n"+sumOfDigits());
 	}
 
