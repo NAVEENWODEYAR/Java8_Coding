@@ -14,6 +14,7 @@ public class FirstTenEvenNumbers {
 		IntStream.iterate(1, n->n+2).limit(10).forEach(System.out::println);
 	}
 	public static void main(String[] args) {
+System.out.println("Program to print first n even numbers");
 		oddNumbers();
 		}
 	}
