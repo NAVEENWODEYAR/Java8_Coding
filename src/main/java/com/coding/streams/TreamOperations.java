@@ -31,6 +31,7 @@ public class TreamOperations {
 	}
 	
 	public static void main(String[] args) {
+System.out.println("Program to demonstrate Stream operations");
 		stremOperations();
 	}
 }
