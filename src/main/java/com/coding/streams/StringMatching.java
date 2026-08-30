@@ -19,6 +19,7 @@ public class StringMatching {
 	}
 	
 	public static void main(String[] args) {
+System.out.println("String matching");
 		allMatch();
 	}
 
