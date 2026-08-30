@@ -91,6 +91,7 @@ public class ArrayCopy {
 	}
 
 	public static void main(String[] args) {
+System.out.println("Array copy");
 		initializeArray();
 	}
 }
