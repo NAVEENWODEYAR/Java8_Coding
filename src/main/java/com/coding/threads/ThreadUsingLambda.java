@@ -22,6 +22,7 @@ public class ThreadUsingLambda {
 	}
 	
 	public static void main(String[] args) {
+System.out.println("Threads using lamba");
 		Runnable runnable = ()-> {
 			threadUsingLambda();
 			System.out.println("\n**********\n");
