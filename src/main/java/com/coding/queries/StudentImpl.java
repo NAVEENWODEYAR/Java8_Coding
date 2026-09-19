@@ -20,7 +20,7 @@ public class StudentImpl {
 					  studentList.add(new Student("Diana", "Science", 70));
 					  studentList.add(new Student("Clara", "Social", 80));
 					  studentList.add(new Student("Bella", "Maths", 90));
-					  studentList.add(new Student("Ammie", "English", 100));
+					  studentList.add(new Student("SeethaMahaLakshmi", "English", 100));
 					  
 //		studentList.stream()
 //				  .collect(Collectors.groupingBy(Student::getStSubject,Collectors.maxBy(Comparator.comparing(Student::getStMarks)))).entrySet().forEach(System.out::println);
