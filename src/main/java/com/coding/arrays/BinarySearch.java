@@ -28,6 +28,7 @@ import java.util.stream.IntStream;
 	    }
 	    
 	    public static void main(String[] args) {
+System.out.println("Binary search program");
 	        int[] arr = {1, 3, 5, 7, 9, 11, 13, 15};
 	        int key = 7;
 	        int result = binarySearch(arr, 0, arr.length - 1, key);
