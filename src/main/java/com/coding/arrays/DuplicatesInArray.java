@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
  * @classDef, extract duplicate elements from an array,
  */
 public class DuplicatesInArray {
-    static List<Integer> listOfIntegers = Arrays.asList(111, 222, 333, 111, 555, 333, 777, 222);
+    static List<Integer> listOfIntegers = Arrays.asList(111, 222, 333, 111, 555, 333, 777, 222,123);
 
     static void extractDuplicates() {
         Set<Integer> uniqueElements = new HashSet<>();
