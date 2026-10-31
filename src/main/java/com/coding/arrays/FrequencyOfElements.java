@@ -17,7 +17,7 @@ public class FrequencyOfElements {
         strList.stream().filter(st->st !=" ").collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().forEach(System.out::println);
 	}
 	public static void main(String[] args) {
-System.out.println("Frequency of elements");
+System.out.println("Frequency of elements using collections.");
 		freqInArrList();
 	}
 	
