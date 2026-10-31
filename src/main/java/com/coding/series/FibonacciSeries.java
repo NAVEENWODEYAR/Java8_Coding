@@ -22,6 +22,7 @@ public class FibonacciSeries {
 	}
 	
 	public static void main(String[] args) {
+System.out.println("Fibonacci series using streams.");
 		fiboSeries();
 		dateCalci(LocalDate.of(1996,05,06));
 	}
