@@ -23,6 +23,7 @@ public class AnagramTest {
 	}
 
 	public static void main(String[] args) {
+System.out.println("Anagram test program."):
 		anagramTest(s1, s2);
 	}
 
